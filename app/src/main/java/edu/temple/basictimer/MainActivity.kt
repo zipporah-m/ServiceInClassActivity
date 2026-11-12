@@ -1,24 +1,19 @@
 package edu.temple.basictimer
 
-import android.app.Service
 import android.content.ComponentName
 import android.content.Intent
 import android.content.ServiceConnection
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
-import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.launch
-import kotlin.concurrent.timer
 
 class MainActivity : AppCompatActivity() {
 
@@ -97,12 +92,12 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         return when (item.itemId) {
-            R.id.startButton -> {
+            R.id.menu_start -> {
                 timerBinder?.start(100)
                 true
             }
 
-            R.id.stopButton -> {
+            R.id.menu_pause -> {
                 timerBinder?.stop()
                 true
             }
